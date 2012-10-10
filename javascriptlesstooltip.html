@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>
+            .tooltip-wrapper {
+                position: relative;
+                margin-top: 100px;
+                display: inline-block;
+            }
+
+            .tooltip-link {
+                cursor: pointer;
+                border-bottom: 1px dotted #ccc;
+            }
+
+            .tooltip {
+                display: none;
+            }
+
+            .tooltip-link:hover + .tooltip {
+                position: absolute;
+                top: -40px;
+                white-space: nowrap;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                display: block;
+            }
+
+            .tooltip-link:hover + .tooltip:before {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 10px;
+                border-width: 10px 10px 0;
+                border-style: solid;
+                border-color: #ccc transparent;
+                display: block;
+                width: 0;
+            }
+
+            .tooltip-link:hover + .tooltip:after {
+                content: "";
+                position: absolute;
+                bottom: -9px;
+                left: 10px;
+                border-width: 10px 10px 0;
+                border-style: solid;
+                border-color: #fff transparent;
+                display: block;
+                width: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <span class="tooltip-wrapper">
+            <span class="tooltip-link">Hover me for a tooltip</span> <span class="tooltip">Hi, I'm your tooltip</span>
+        </span>
+    </body>
+</html>
